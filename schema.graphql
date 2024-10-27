@@ -1,0 +1,40 @@
+type IntentCanceled @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  intentIndex: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IntentCreated @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  intentIndex: BigInt! # uint256
+  recipient: Bytes! # address
+  amount: BigInt! # uint256
+  frequency: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IntentExecuted @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  intentIndex: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PermitTransfer @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  owner: Bytes! # address
+  receiver: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

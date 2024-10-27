@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "Goemon": {
+      "address": "0x8c5F9516C23088d5F5E7F91B3327A93D9c7f3a93",
+      "startBlock": 6958315
+    }
+  }
+}

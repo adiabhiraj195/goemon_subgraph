@@ -1,0 +1,35 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Goemon
+    network: sepolia
+    source:
+      address: "0x8c5F9516C23088d5F5E7F91B3327A93D9c7f3a93"
+      abi: Goemon
+      startBlock: 6958315
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - IntentCanceled
+        - IntentCreated
+        - IntentExecuted
+        - PermitTransfer
+      abis:
+        - name: Goemon
+          file: ./abis/Goemon.json
+      eventHandlers:
+        - event: IntentCanceled(indexed address,uint256)
+          handler: handleIntentCanceled
+        - event: IntentCreated(indexed address,indexed uint256,indexed address,uint256,uint256)
+          handler: handleIntentCreated
+        - event: IntentExecuted(indexed address,uint256)
+          handler: handleIntentExecuted
+        - event: PermitTransfer(indexed address,indexed address,indexed address,uint256)
+          handler: handlePermitTransfer
+      file: ./src/goemon.ts
