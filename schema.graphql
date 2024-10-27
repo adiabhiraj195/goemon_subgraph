@@ -1,5 +1,5 @@
 type IntentCanceled @entity(immutable: true) {
-  id: Bytes!
+  id: ID!
   user: Bytes! # address
   intentIndex: BigInt! # uint256
   blockNumber: BigInt!
@@ -8,7 +8,7 @@ type IntentCanceled @entity(immutable: true) {
 }
 
 type IntentCreated @entity(immutable: true) {
-  id: Bytes!
+  id: ID!
   user: Bytes! # address
   intentIndex: BigInt! # uint256
   recipient: Bytes! # address
@@ -20,7 +20,7 @@ type IntentCreated @entity(immutable: true) {
 }
 
 type IntentExecuted @entity(immutable: true) {
-  id: Bytes!
+  id: ID!
   user: Bytes! # address
   intentIndex: BigInt! # uint256
   blockNumber: BigInt!
